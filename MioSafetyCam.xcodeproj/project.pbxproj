@@ -1,0 +1,563 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 77;
+	objects = {
+
+/* Begin PBXContainerItemProxy section */
+		7201D1332D66CA7E001BB825 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 7201D11A2D66CA7C001BB825 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 7201D1212D66CA7C001BB825;
+			remoteInfo = MioSafetyCam;
+		};
+		7201D13D2D66CA7E001BB825 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 7201D11A2D66CA7C001BB825 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 7201D1212D66CA7C001BB825;
+			remoteInfo = MioSafetyCam;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		7201D1222D66CA7C001BB825 /* MioSafetyCam.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MioSafetyCam.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		7201D1322D66CA7E001BB825 /* MioSafetyCamTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MioSafetyCamTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		7201D13C2D66CA7E001BB825 /* MioSafetyCamUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MioSafetyCamUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFileSystemSynchronizedRootGroup section */
+		7201D1242D66CA7C001BB825 /* MioSafetyCam */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = MioSafetyCam;
+			sourceTree = "<group>";
+		};
+		7201D1352D66CA7E001BB825 /* MioSafetyCamTests */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = MioSafetyCamTests;
+			sourceTree = "<group>";
+		};
+		7201D13F2D66CA7E001BB825 /* MioSafetyCamUITests */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = MioSafetyCamUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXFileSystemSynchronizedRootGroup section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		7201D11F2D66CA7C001BB825 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7201D12F2D66CA7E001BB825 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7201D1392D66CA7E001BB825 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		7201D1192D66CA7C001BB825 = {
+			isa = PBXGroup;
+			children = (
+				7201D1242D66CA7C001BB825 /* MioSafetyCam */,
+				7201D1352D66CA7E001BB825 /* MioSafetyCamTests */,
+				7201D13F2D66CA7E001BB825 /* MioSafetyCamUITests */,
+				7201D1232D66CA7C001BB825 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		7201D1232D66CA7C001BB825 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				7201D1222D66CA7C001BB825 /* MioSafetyCam.app */,
+				7201D1322D66CA7E001BB825 /* MioSafetyCamTests.xctest */,
+				7201D13C2D66CA7E001BB825 /* MioSafetyCamUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		7201D1212D66CA7C001BB825 /* MioSafetyCam */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 7201D1462D66CA7E001BB825 /* Build configuration list for PBXNativeTarget "MioSafetyCam" */;
+			buildPhases = (
+				7201D11E2D66CA7C001BB825 /* Sources */,
+				7201D11F2D66CA7C001BB825 /* Frameworks */,
+				7201D1202D66CA7C001BB825 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			fileSystemSynchronizedGroups = (
+				7201D1242D66CA7C001BB825 /* MioSafetyCam */,
+			);
+			name = MioSafetyCam;
+			packageProductDependencies = (
+			);
+			productName = MioSafetyCam;
+			productReference = 7201D1222D66CA7C001BB825 /* MioSafetyCam.app */;
+			productType = "com.apple.product-type.application";
+		};
+		7201D1312D66CA7E001BB825 /* MioSafetyCamTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 7201D1492D66CA7E001BB825 /* Build configuration list for PBXNativeTarget "MioSafetyCamTests" */;
+			buildPhases = (
+				7201D12E2D66CA7E001BB825 /* Sources */,
+				7201D12F2D66CA7E001BB825 /* Frameworks */,
+				7201D1302D66CA7E001BB825 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				7201D1342D66CA7E001BB825 /* PBXTargetDependency */,
+			);
+			fileSystemSynchronizedGroups = (
+				7201D1352D66CA7E001BB825 /* MioSafetyCamTests */,
+			);
+			name = MioSafetyCamTests;
+			packageProductDependencies = (
+			);
+			productName = MioSafetyCamTests;
+			productReference = 7201D1322D66CA7E001BB825 /* MioSafetyCamTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		7201D13B2D66CA7E001BB825 /* MioSafetyCamUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 7201D14C2D66CA7E001BB825 /* Build configuration list for PBXNativeTarget "MioSafetyCamUITests" */;
+			buildPhases = (
+				7201D1382D66CA7E001BB825 /* Sources */,
+				7201D1392D66CA7E001BB825 /* Frameworks */,
+				7201D13A2D66CA7E001BB825 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				7201D13E2D66CA7E001BB825 /* PBXTargetDependency */,
+			);
+			fileSystemSynchronizedGroups = (
+				7201D13F2D66CA7E001BB825 /* MioSafetyCamUITests */,
+			);
+			name = MioSafetyCamUITests;
+			packageProductDependencies = (
+			);
+			productName = MioSafetyCamUITests;
+			productReference = 7201D13C2D66CA7E001BB825 /* MioSafetyCamUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		7201D11A2D66CA7C001BB825 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1620;
+				LastUpgradeCheck = 1620;
+				TargetAttributes = {
+					7201D1212D66CA7C001BB825 = {
+						CreatedOnToolsVersion = 16.2;
+					};
+					7201D1312D66CA7E001BB825 = {
+						CreatedOnToolsVersion = 16.2;
+						TestTargetID = 7201D1212D66CA7C001BB825;
+					};
+					7201D13B2D66CA7E001BB825 = {
+						CreatedOnToolsVersion = 16.2;
+						TestTargetID = 7201D1212D66CA7C001BB825;
+					};
+				};
+			};
+			buildConfigurationList = 7201D11D2D66CA7C001BB825 /* Build configuration list for PBXProject "MioSafetyCam" */;
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 7201D1192D66CA7C001BB825;
+			minimizedProjectReferenceProxies = 1;
+			preferredProjectObjectVersion = 77;
+			productRefGroup = 7201D1232D66CA7C001BB825 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				7201D1212D66CA7C001BB825 /* MioSafetyCam */,
+				7201D1312D66CA7E001BB825 /* MioSafetyCamTests */,
+				7201D13B2D66CA7E001BB825 /* MioSafetyCamUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		7201D1202D66CA7C001BB825 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7201D1302D66CA7E001BB825 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7201D13A2D66CA7E001BB825 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		7201D11E2D66CA7C001BB825 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7201D12E2D66CA7E001BB825 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7201D1382D66CA7E001BB825 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		7201D1342D66CA7E001BB825 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 7201D1212D66CA7C001BB825 /* MioSafetyCam */;
+			targetProxy = 7201D1332D66CA7E001BB825 /* PBXContainerItemProxy */;
+		};
+		7201D13E2D66CA7E001BB825 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 7201D1212D66CA7C001BB825 /* MioSafetyCam */;
+			targetProxy = 7201D13D2D66CA7E001BB825 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		7201D1442D66CA7E001BB825 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.2;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		7201D1452D66CA7E001BB825 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.2;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		7201D1472D66CA7E001BB825 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"MioSafetyCam/Preview Content\"";
+				DEVELOPMENT_TEAM = 35SMF74858;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = weichiangko.MioSafetyCam;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		7201D1482D66CA7E001BB825 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"MioSafetyCam/Preview Content\"";
+				DEVELOPMENT_TEAM = 35SMF74858;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = weichiangko.MioSafetyCam;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		7201D14A2D66CA7E001BB825 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 35SMF74858;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.2;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = weichiangko.MioSafetyCamTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/MioSafetyCam.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/MioSafetyCam";
+			};
+			name = Debug;
+		};
+		7201D14B2D66CA7E001BB825 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 35SMF74858;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.2;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = weichiangko.MioSafetyCamTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/MioSafetyCam.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/MioSafetyCam";
+			};
+			name = Release;
+		};
+		7201D14D2D66CA7E001BB825 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 35SMF74858;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = weichiangko.MioSafetyCamUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = MioSafetyCam;
+			};
+			name = Debug;
+		};
+		7201D14E2D66CA7E001BB825 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 35SMF74858;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = weichiangko.MioSafetyCamUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = MioSafetyCam;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		7201D11D2D66CA7C001BB825 /* Build configuration list for PBXProject "MioSafetyCam" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7201D1442D66CA7E001BB825 /* Debug */,
+				7201D1452D66CA7E001BB825 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		7201D1462D66CA7E001BB825 /* Build configuration list for PBXNativeTarget "MioSafetyCam" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7201D1472D66CA7E001BB825 /* Debug */,
+				7201D1482D66CA7E001BB825 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		7201D1492D66CA7E001BB825 /* Build configuration list for PBXNativeTarget "MioSafetyCamTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7201D14A2D66CA7E001BB825 /* Debug */,
+				7201D14B2D66CA7E001BB825 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		7201D14C2D66CA7E001BB825 /* Build configuration list for PBXNativeTarget "MioSafetyCamUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7201D14D2D66CA7E001BB825 /* Debug */,
+				7201D14E2D66CA7E001BB825 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 7201D11A2D66CA7C001BB825 /* Project object */;
+}
