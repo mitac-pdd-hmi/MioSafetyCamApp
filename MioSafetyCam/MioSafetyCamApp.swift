@@ -1,17 +1,28 @@
-//
-//  MioSafetyCamApp.swift
-//  MioSafetyCam
-//
-//  Created by hmi-ben on 2025/2/20.
-//
-
 import SwiftUI
 
 @main
 struct MioSafetyCamApp: App {
+    @State private var volume: CGFloat = 0.5
+    
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            ZStack {
+                Color("color/gray/900")
+                    .ignoresSafeArea()
+                
+                VStack {
+                    Spacer()
+                    
+                    HStack {
+                        Spacer()
+                        VolumeWidgetView(volume: $volume)
+                        Spacer()
+                    }
+                    .padding(.bottom, 50)
+                    
+                    Spacer()
+                }
+            }
         }
     }
 }
