@@ -57,10 +57,10 @@ struct VolumeWidgetView: View {
                         .fill(Color("color/gray/200"))
                         .frame(height: whiteHeight)
                 }
-                .clipShape(RoundedRectangle(cornerRadius: 24))
+                .clipShape(RoundedRectangle(cornerRadius: 32))
                 .overlay(
                     Image(systemName: speakerIconName)
-                        .font(.system(size: 30)) // 30pt 字型大小
+                        .font(.system(size: 30))
                         .foregroundColor(isIconCovered ? Color("color/gray/700") : Color("color/gray/200"))
                         .padding(.bottom, 20)
                         .frame(maxHeight: .infinity, alignment: .bottom)
