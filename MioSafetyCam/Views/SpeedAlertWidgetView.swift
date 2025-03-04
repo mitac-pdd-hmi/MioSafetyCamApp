@@ -1,14 +1,16 @@
 import SwiftUI
 
 struct SpeedAlertWidgetView: View {
-    @State private var speed: Int = 90 // 當前速度
+    @State private var speed: Int = 120 // 當前速度
     @State private var speedLimit: Int = 110 // 速限
     @State private var distance: CGFloat = 250 // 當前距離
     @State private var distanceToSpeedCamera: CGFloat = 500 // 離 speed camera 多遠
     
     var body: some View {
         
-        let overSpeed = speed > speedLimit
+        var overSpeed: Bool {
+            speed > speedLimit
+        }
         
         ZStack {
             Color("color/gray/800")
@@ -25,7 +27,7 @@ struct SpeedAlertWidgetView: View {
                                 RoundedRectangle(cornerRadius: 32)
                                     .fill(Color(red: 0.27, green: 0.04, blue: 0.04))
                                     .stroke(Color(red: 0.86, green: 0.15, blue: 0.15), lineWidth: 80)
-                                    .blur(radius: 80)
+                                    .blur(radius: 70)
                                     .clipShape(RoundedRectangle(cornerRadius: 32))
                                     .transition(.opacity)
                             } else {
