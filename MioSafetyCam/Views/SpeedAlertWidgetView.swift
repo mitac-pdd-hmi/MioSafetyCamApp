@@ -19,18 +19,22 @@ struct SpeedAlertWidgetView: View {
                     .fill(Color("color/gray/900"))
                     .frame(maxWidth: .infinity, maxHeight: .infinity)
                     .overlay(
-                        RoundedRectangle(cornerRadius: 32)
-                            .stroke(Color.white.opacity(0.2), lineWidth: 1)
-                    )
-                // 超速時的效果
-                    .overlay(
-                        RoundedRectangle(cornerRadius: 32)
-                            .fill(Color(red: 0.27, green: 0.04, blue: 0.04))
-                            .stroke(Color(red: 0.86, green: 0.15, blue: 0.15), lineWidth: 80)
-                            .blur(radius: 80)
-                            .clipShape(RoundedRectangle(cornerRadius: 32))
-                            .opacity(overSpeed ? 1 : 0)
-                            .animation(.linear(duration: 0.3), value: overSpeed)
+                        ZStack {
+                            if overSpeed {
+                                // 超速的視覺效果
+                                RoundedRectangle(cornerRadius: 32)
+                                    .fill(Color(red: 0.27, green: 0.04, blue: 0.04))
+                                    .stroke(Color(red: 0.86, green: 0.15, blue: 0.15), lineWidth: 80)
+                                    .blur(radius: 80)
+                                    .clipShape(RoundedRectangle(cornerRadius: 32))
+                                    .transition(.opacity)
+                            } else {
+                                RoundedRectangle(cornerRadius: 32)
+                                    .stroke(Color.white.opacity(0.2), lineWidth: 1)
+                                    .transition(.opacity)
+                            }
+                        }
+                        .animation(.linear(duration: 0.3), value: overSpeed)
                     )
                 
                 HStack {
