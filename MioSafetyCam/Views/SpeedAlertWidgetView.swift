@@ -1,9 +1,15 @@
 import SwiftUI
 
 struct SpeedAlertWidgetView: View {
-    @State private var distance: CGFloat = 250 // 初始距離 500m
+    @State private var speed: Int = 90 // 當前速度
+    @State private var speedLimit: Int = 110 // 速限
+    @State private var distance: CGFloat = 250 // 當前距離
+    @State private var distanceToSpeedCamera: CGFloat = 500 // 離 speed camera 多遠
     
     var body: some View {
+        
+        let overSpeed = speed > speedLimit
+        
         ZStack {
             Color("color/gray/800")
                 .ignoresSafeArea()
@@ -11,44 +17,61 @@ struct SpeedAlertWidgetView: View {
             ZStack {
                 RoundedRectangle(cornerRadius: 32)
                     .fill(Color("color/gray/900"))
-                    .frame(maxWidth: .infinity, maxHeight:.infinity)
+                    .frame(maxWidth: .infinity, maxHeight: .infinity)
                     .overlay(
                         RoundedRectangle(cornerRadius: 32)
                             .stroke(Color.white.opacity(0.2), lineWidth: 1)
                     )
+                // 超速時的效果
+                    .overlay(
+                        RoundedRectangle(cornerRadius: 32)
+                            .fill(Color(red: 0.27, green: 0.04, blue: 0.04))
+                            .stroke(Color(red: 0.86, green: 0.15, blue: 0.15), lineWidth: 80)
+                            .blur(radius: 80)
+                            .clipShape(RoundedRectangle(cornerRadius: 32))
+                            .opacity(overSpeed ? 1 : 0)
+                            .animation(.linear(duration: 0.3), value: overSpeed)
+                    )
                 
                 HStack {
-                    // 傳入動態 distance 給 CameraDistanceView
-                    CameraDistanceView(distance: distance)
-                    HStack{
-                        SpeedInfoView()
-                    }
-                    .frame(maxWidth: .infinity)
+                    // 傳入 distance 與 distanceToSpeedCamera 到 CameraDistanceView
+                    CameraDistanceView(distance: distance, distanceToSpeedCamera: distanceToSpeedCamera)
+                    
+                    SpeedInfoView(speed: speed, speedLimit: speedLimit)
+                        .frame(maxWidth: .infinity)
                 }
                 .padding(16)
             }
             .aspectRatio(1, contentMode: .fit)
             .padding(16)
         }
+        // 測試用正式時請刪除
+        .overlay(
+            VStack {
+                Spacer()
+                Slider(value: Binding(
+                    get: { Double(speed) },
+                    set: { speed = Int($0) }
+                ), in: 0...200)
+                .padding()
+            }
+        )
     }
 }
 
 struct CameraDistanceView: View {
-    /// 當前距離（單位：m）
     let distance: CGFloat
-    /// 最大距離（橘色區塊滿高時的距離）
-    let maxDistance: CGFloat = 500
+    let distanceToSpeedCamera: CGFloat
     
     var body: some View {
         GeometryReader { geo in
             ZStack {
-                // 背景膠囊形狀（深色底板）
+                // 背景膠囊形狀
                 RoundedRectangle(cornerRadius: 20, style: .continuous)
                     .fill(Color.white.opacity(0.2))
-                    .shadow(radius: 2)
                 
-                // 上方橘色區域，依據距離改變高度
-                VStack(spacing: 0) {
+                // 上方橘色區域，依據 distance 改變高度
+                VStack {
                     Color("color/brand/400")
                         .frame(height: orangeHeight(totalHeight: geo.size.height))
                     Spacer(minLength: 0)
@@ -71,17 +94,15 @@ struct CameraDistanceView: View {
                         .frame(maxHeight: .infinity)
                     
                     // 底部距離文字
-                    VStack {
-                        VStack(spacing: 0) {
-                            Text("\(Int(distance))")
-                                .font(.system(size: 32, weight: .bold, width: .condensed))
-                                .foregroundColor(.white)
-                            Text("m")
-                                .font(.system(size: 32, weight: .bold, width: .condensed))
-                                .foregroundColor(.white.opacity(0.6))
-                        }
-                        .padding(.bottom, 16)
+                    VStack(spacing: 0) {
+                        Text("\(Int(distance))")
+                            .font(.system(size: 32, weight: .bold, width: .condensed))
+                            .foregroundColor(.white)
+                        Text("m")
+                            .font(.system(size: 32, weight: .bold, width: .condensed))
+                            .foregroundColor(.white.opacity(0.6))
                     }
+                    .padding(.bottom, 16)
                 }
             }
         }
@@ -91,7 +112,7 @@ struct CameraDistanceView: View {
     
     /// 根據 distance 計算橘色區塊的高度
     private func orangeHeight(totalHeight: CGFloat) -> CGFloat {
-        let ratio = distance / maxDistance
+        let ratio = distance / distanceToSpeedCamera
         return max(0, min(ratio, 1.0)) * totalHeight
     }
 }
@@ -107,24 +128,43 @@ struct DottedLine: Shape {
 }
 
 struct SpeedInfoView: View {
+    let speed: Int
+    let speedLimit: Int
+    
+    var overSpeed: Bool {
+        speed > speedLimit
+    }
+    
     var body: some View {
         VStack {
             ZStack {
-                Circle()
-                    .strokeBorder(Color.red, lineWidth: 10)
-                    .background(Circle().fill(Color.white))
-                    .frame(width: 132, height: 132)
-                
-                Text("110")
-                    .font(.system(size: 64, weight: .bold, width: .condensed))
-                    .foregroundColor(.black)
+                if overSpeed {
+                    Circle()
+                        .strokeBorder(Color.white, lineWidth: 10)
+                        .strokeBorder(Color.red, lineWidth: 6)
+                        .background(Circle().fill(Color.red))
+                        .frame(width: 132, height: 132)
+                    
+                    Text("\(speedLimit)")
+                        .font(.system(size: 64, weight: .bold, width: .condensed))
+                        .foregroundColor(.white)
+                } else {
+                    Circle()
+                        .strokeBorder(Color.red, lineWidth: 10)
+                        .background(Circle().fill(Color.white))
+                        .frame(width: 132, height: 132)
+                    
+                    Text("\(speedLimit)")
+                        .font(.system(size: 64, weight: .bold, width: .condensed))
+                        .foregroundColor(.black)
+                }
             }
             .padding(.top, 28)
             
             Spacer()
             
             HStack {
-                Text("100")
+                Text("\(speed)")
                     .font(.custom("ChakraPetch-Medium", size: 76))
                     .foregroundColor(.white)
                 Text("km/h")
@@ -132,8 +172,6 @@ struct SpeedInfoView: View {
                     .foregroundColor(Color.white.opacity(0.6))
             }
             .frame(maxHeight: .infinity, alignment: .center)
-            
-            Spacer()
         }
     }
 }
