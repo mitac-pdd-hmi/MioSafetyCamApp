@@ -147,8 +147,8 @@ struct SpeedInfoView: View {
                 if overSpeed {
                     Circle()
                         .strokeBorder(Color.white, lineWidth: 10)
-                        .strokeBorder(Color.red, lineWidth: 6)
-                        .background(Circle().fill(Color.red))
+                        .strokeBorder(Color(red: 0.86, green: 0.15, blue: 0.15), lineWidth: 6)
+                        .background(Circle().fill(Color(red: 0.86, green: 0.15, blue: 0.15)))
                         .frame(width: 132, height: 132)
                     
                     Text("\(speedLimit)")
@@ -156,7 +156,7 @@ struct SpeedInfoView: View {
                         .foregroundColor(.white)
                 } else {
                     Circle()
-                        .strokeBorder(Color.red, lineWidth: 10)
+                        .strokeBorder(Color(red: 0.86, green: 0.15, blue: 0.15), lineWidth: 10)
                         .background(Circle().fill(Color.white))
                         .frame(width: 132, height: 132)
                     
