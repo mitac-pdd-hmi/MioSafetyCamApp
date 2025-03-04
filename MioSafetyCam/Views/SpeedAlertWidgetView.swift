@@ -5,29 +5,30 @@ struct SpeedAlertWidgetView: View {
     
     var body: some View {
         ZStack {
-            Color("color/gray/900")
+            Color("color/gray/800")
                 .ignoresSafeArea()
             
             ZStack {
-                RoundedRectangle(cornerRadius: 16)
+                RoundedRectangle(cornerRadius: 32)
                     .fill(Color("color/gray/900"))
-                    .frame(width: 353, height: 353)
+                    .frame(maxWidth: .infinity, maxHeight:.infinity)
                     .overlay(
                         RoundedRectangle(cornerRadius: 32)
                             .stroke(Color.white.opacity(0.2), lineWidth: 1)
                     )
                 
-                HStack(spacing: 0) {
+                HStack {
                     // 傳入動態 distance 給 CameraDistanceView
                     CameraDistanceView(distance: distance)
-                    
-                    Spacer(minLength: 0)
-                    
-                    SpeedInfoView()
+                    HStack{
+                        SpeedInfoView()
+                    }
+                    .frame(maxWidth: .infinity)
                 }
                 .padding(16)
-                .frame(width: 353, height: 353)
             }
+            .aspectRatio(1, contentMode: .fit)
+            .padding(16)
         }
     }
 }
@@ -56,36 +57,31 @@ struct CameraDistanceView: View {
                     RoundedRectangle(cornerRadius: 20, style: .continuous)
                 )
                 
-                // 中間虛線
-                DottedLine()
-                    .stroke(style: StrokeStyle(lineWidth: 2, dash: [5, 5]))
-                    .foregroundColor(.white)
-                    .frame(width: 2)
-                    .frame(maxHeight: .infinity)
-                
-                // 相機圖示（置頂）
                 VStack {
-                    Image(systemName: "camera.fill")
-                        .resizable()
-                        .scaledToFit()
-                        .frame(width: geo.size.width * 0.4)
-                        .foregroundColor(.white)
-                        .padding(.top, 8)
-                    Spacer()
-                }
-                
-                // 底部距離文字
-                VStack {
-                    Spacer()
-                    VStack(spacing: 0) {
-                        Text("\(Int(distance))")
-                            .font(.system(size: 24, weight: .bold, width: .condensed))
-                            .foregroundColor(.white)
-                        Text("m")
-                            .font(.system(size: 18, weight: .bold, width: .condensed))
-                            .foregroundColor(.white)
+                    // 相機圖示（置頂）
+                    CameraType1()
+                        .frame(width: 64, height: 64)
+                        .foregroundColor(Color.black.opacity(0.8))
+                        .padding(.top, 12)
+                    
+                    // 中間虛線
+                    DottedLine()
+                        .stroke(style: StrokeStyle(lineWidth: 4, dash: [12, 12]))
+                        .foregroundColor(.white.opacity(0.2))
+                        .frame(maxHeight: .infinity)
+                    
+                    // 底部距離文字
+                    VStack {
+                        VStack(spacing: 0) {
+                            Text("\(Int(distance))")
+                                .font(.system(size: 32, weight: .bold, width: .condensed))
+                                .foregroundColor(.white)
+                            Text("m")
+                                .font(.system(size: 32, weight: .bold, width: .condensed))
+                                .foregroundColor(.white.opacity(0.6))
+                        }
+                        .padding(.bottom, 16)
                     }
-                    .padding(.bottom, 8)
                 }
             }
         }
@@ -123,7 +119,7 @@ struct SpeedInfoView: View {
                     .font(.system(size: 64, weight: .bold, width: .condensed))
                     .foregroundColor(.black)
             }
-            .padding(.top, 24)
+            .padding(.top, 28)
             
             Spacer()
             
@@ -132,10 +128,10 @@ struct SpeedInfoView: View {
                     .font(.custom("ChakraPetch-Medium", size: 76))
                     .foregroundColor(.white)
                 Text("km/h")
-                    .font(.system(size: 32, weight: .bold, width: .condensed))
-                    .foregroundColor(.white)
+                    .font(.system(size: 32, weight: .medium, width: .condensed))
+                    .foregroundColor(Color.white.opacity(0.6))
             }
-            
+            .frame(maxHeight: .infinity, alignment: .center)
             
             Spacer()
         }
