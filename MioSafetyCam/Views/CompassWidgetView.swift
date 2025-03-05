@@ -18,16 +18,17 @@ struct CompassWidgetView: View {
                             HStack(alignment: .bottom) {
                                 Rectangle()
                                     .fill(Color.white.opacity(0))
-                                    .frame(width: .infinity)
-                                Compass()
+                                // 這裡 ringRadius 用來控制環的半徑
+                                Compass(ringRadius: 32)
                                     .frame(width: 64, height: 64)
                             }
                         }
                         .padding(16)
                     )
             }
-            .frame(width: 172, height: 172)
+            // 僅供本元件大小用
             .aspectRatio(1, contentMode: .fit)
+            .frame(width: 172)
         }
     }
 }
@@ -72,23 +73,23 @@ struct CompassInfo: View {
 
 // 羅盤整體組件
 struct Compass: View {
+    var ringRadius: CGFloat
+    
     var body: some View {
         ZStack {
-            CompassRing()
+            CompassRing(ringRadius: ringRadius)
             CompassArrow()
                 .fill(Color("color/brand/400"))
                 .frame(width: 32, height: 32)
                 .offset(y: -2)
         }
-        .frame(maxWidth: .infinity, maxHeight: .infinity)
     }
 }
 
 // 羅盤刻度
 struct CompassRing: View {
     let totalTicks = 24
-    let ringRadius: CGFloat = 32
-    
+    var ringRadius: CGFloat  // 外部傳入
     let tickWidth: CGFloat = 2
     let tickHeight: CGFloat = 6
     
@@ -96,7 +97,6 @@ struct CompassRing: View {
         ZStack {
             ForEach(0..<totalTicks, id: \.self) { i in
                 Rectangle()
-                // 在 12 點鐘方向使用品牌色，其餘則白、灰交錯
                     .fill(i == 0 ? Color("color/brand/400") : (i % 2 == 0 ? Color.white : Color.gray))
                     .frame(width: tickWidth, height: tickHeight)
                     .offset(y: -ringRadius + (tickHeight / 2))
