@@ -1,10 +1,9 @@
 import SwiftUI
 
 struct SpeedAlertWidgetView: View {
-    // 速度與速限、距離相關狀態
-    @State private var speed: Int = 120       // 當前速度
-    @State private var speedLimit: Int = 110    // 速限
-    @State private var distance: CGFloat = 250  // 當前距離
+    @State private var speed: Int = 120 // 當前速度
+    @State private var speedLimit: Int = 110 // 速限
+    @State private var distance: CGFloat = 120 // 當前距離
     @State private var distanceToSpeedCamera: CGFloat = 500 // 與 speed camera 的距離
     
     @StateObject private var viewModel = SpeedAlertViewModel()
@@ -23,7 +22,7 @@ struct SpeedAlertWidgetView: View {
                 .ignoresSafeArea()
             
             ZStack {
-                // 背景：根據有無相機與超速狀態決定外觀
+                // 背景
                 RoundedRectangle(cornerRadius: 32)
                     .fill(Color("color/gray/900"))
                     .frame(maxWidth: .infinity, maxHeight: .infinity)
