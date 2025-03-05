@@ -23,7 +23,7 @@ struct CompassWidgetView: View {
                                     .frame(width: 64, height: 64)
                             }
                         }
-                            .padding(16)
+                        .padding(16)
                     )
             }
             .frame(width: 172, height: 172)
