@@ -9,7 +9,7 @@ struct ClockWidgetView: View {
     
     var body: some View {
         ZStack {
-            Color.black
+            Color("color/gray/800")
                 .ignoresSafeArea()
             
             ZStack {
@@ -20,7 +20,7 @@ struct ClockWidgetView: View {
                         VStack {
                             // 日期
                             Text(DateFormatterProvider.dateFormatter.string(from: currentDate))
-                                .foregroundColor(.white)
+                                .foregroundColor(Color("color/gray/300"))
                                 .font(.system(size: 20))
                             
                             Spacer()
@@ -37,7 +37,7 @@ struct ClockWidgetView: View {
                             
                             // AM/PM
                             Text(DateFormatterProvider.ampmFormatter.string(from: currentDate))
-                                .foregroundColor(.white)
+                                .foregroundColor(Color("color/gray/300"))
                                 .font(.system(size: 20))
                         }
                         .padding(16)
@@ -61,7 +61,7 @@ struct SlidingTimeView: View {
         HStack(spacing: 0) {
             ForEach(Array(timeString), id: \.self) { char in
                 Text(String(char))
-                    .font(.system(size: 56))
+                    .font(.system(size: 56, weight: .light, design: .default))
                     .foregroundColor(.white)
                     // 讓新字由上方滑入，舊字往下方滑出
                     .transition(
