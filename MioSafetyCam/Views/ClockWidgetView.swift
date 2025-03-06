@@ -18,27 +18,30 @@ struct ClockWidgetView: View {
                     .stroke(Color("neutral/outline"), lineWidth: 1)
                     .overlay(
                         VStack {
-                            // 使用 DateFormatterProvider 提供的格式化器顯示日期
+                            // 日期
                             Text(DateFormatterProvider.dateFormatter.string(from: currentDate))
                                 .foregroundColor(.white)
                                 .font(.system(size: 20))
                             
                             Spacer()
                             
-                            // 使用 DateFormatterProvider 提供的格式化器顯示時間
-                            Text(DateFormatterProvider.timeFormatter.string(from: currentDate))
-                                .foregroundColor(.white)
-                                .font(.system(size: 56))
+                            // 使用 SlidingTimeView 來顯示時間，並帶入上下滑動動畫
+                            SlidingTimeView(
+                                timeString: DateFormatterProvider.timeFormatter.string(from: currentDate)
+                            )
+                            // 裁切外框
+                            .frame(height: 56)
+                            .clipped()
                             
                             Spacer()
                             
-                            // 使用 DateFormatterProvider 提供的格式化器顯示 AM/PM
+                            // AM/PM
                             Text(DateFormatterProvider.ampmFormatter.string(from: currentDate))
                                 .foregroundColor(.white)
                                 .font(.system(size: 20))
                         }
                         .padding(16)
-                        // 當計時器更新時，更新 currentDate
+                        // 每秒更新 currentDate
                         .onReceive(timer) { date in
                             self.currentDate = date
                         }
@@ -50,7 +53,32 @@ struct ClockWidgetView: View {
     }
 }
 
-// 獨立的 DateFormatterProvider，用來提供格式化器
+// MARK: 數字滾動動畫
+struct SlidingTimeView: View {
+    let timeString: String
+    
+    var body: some View {
+        HStack(spacing: 0) {
+            ForEach(Array(timeString), id: \.self) { char in
+                Text(String(char))
+                    .font(.system(size: 56))
+                    .foregroundColor(.white)
+                    // 讓新字由上方滑入，舊字往下方滑出
+                    .transition(
+                        .asymmetric(
+                            insertion: .move(edge: .top),
+                            removal: .move(edge: .bottom)
+                        )
+                    )
+                    .id(char)
+            }
+        }
+        // 當 timeString 改變時，對更新部分執行動畫
+        .animation(.easeInOut(duration: 0.9), value: timeString)
+    }
+}
+
+// MARK: 時間日期格式化
 struct DateFormatterProvider {
     static let dateFormatter: DateFormatter = {
         let formatter = DateFormatter()
@@ -62,6 +90,7 @@ struct DateFormatterProvider {
     static let timeFormatter: DateFormatter = {
         let formatter = DateFormatter()
         formatter.locale = Locale(identifier: "en_US_POSIX")
+        // 若想使用 12 小時制，請改成 "hh:mm"
         formatter.dateFormat = "HH:mm"
         return formatter
     }()
