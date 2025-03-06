@@ -1,44 +1,81 @@
 import SwiftUI
 
 struct CompassWidgetView: View {
+    @State private var angleInput: String = "0"
+    @State private var currentAngle: Double = 0  // 控制 CompassArrow 的旋轉角度
+
     var body: some View {
         ZStack {
-            // 背景色
             Color("color/gray/800")
                 .ignoresSafeArea()
             
+            // 羅盤卡片
             ZStack {
                 RoundedRectangle(cornerRadius: 32)
                     .fill(Color("color/gray/900"))
-                    .stroke(Color("neutral/outline").opacity(0.8), lineWidth: 1)
+                    .stroke(Color("neutral/outline"), lineWidth: 1)
                     .overlay(
                         ZStack {
                             CompassInfo()
                             
+                            // 右下角的羅盤
                             HStack(alignment: .bottom) {
                                 Rectangle()
                                     .fill(Color.white.opacity(0))
-                                // 這裡 ringRadius 用來控制環的半徑
-                                Compass(ringRadius: 32)
+                                // 傳入 ringRadius 與 currentAngle 控制 CompassArrow 旋轉
+                                Compass(ringRadius: 32, angle: currentAngle)
                                     .frame(width: 64, height: 64)
                             }
                         }
                         .padding(16)
                     )
             }
-            // 僅供本元件大小用
+            .frame(width: 172, height: 172)
             .aspectRatio(1, contentMode: .fit)
-            .frame(width: 172)
+            
+            // （測試用）輸入角度看效果
+            VStack {
+                Spacer()
+                AngleInputField(angleInput: $angleInput, currentAngle: $currentAngle)
+            }
         }
     }
 }
 
-// 左邊的方位和海拔資訊
+// MARK: （測試用）羅盤指針旋轉輸入
+struct AngleInputField: View {
+    @Binding var angleInput: String
+    @Binding var currentAngle: Double
+
+    var body: some View {
+        TextField("輸入角度測試旋轉", text: $angleInput, onCommit: {
+            if let newAngle = Double(angleInput) {
+                let normalizedNew = newAngle.truncatingRemainder(dividingBy: 360)
+                let normalizedCurrent = currentAngle.truncatingRemainder(dividingBy: 360)
+                var delta = normalizedNew - normalizedCurrent
+                // 調整以取得最短轉動路徑
+                if delta > 180 {
+                    delta -= 360
+                } else if delta < -180 {
+                    delta += 360
+                }
+                let finalAngle = currentAngle + delta
+                withAnimation(.easeInOut(duration: 0.5)) {
+                    currentAngle = finalAngle
+                }
+            }
+        })
+        .textFieldStyle(RoundedBorderTextFieldStyle())
+        .frame(width: 160)
+    }
+}
+
+// MARK: 左側資訊
 struct CompassInfo: View {
     var body: some View {
         HStack {
             VStack(alignment: .leading) {
-                // 左側資訊
+                // 海拔資訊
                 VStack(alignment: .leading, spacing: 4) {
                     Text("海拔高度")
                         .font(.callout)
@@ -47,9 +84,7 @@ struct CompassInfo: View {
                         .font(.title3.bold())
                         .foregroundColor(.white)
                 }
-
                 Spacer()
-                
                 // 指南資訊
                 VStack(alignment: .leading, spacing: 4) {
                     Text("指南")
@@ -65,34 +100,36 @@ struct CompassInfo: View {
                     }
                 }
             }
-            
             Spacer()
         }
     }
 }
 
-// 羅盤整體組件
+// MARK: 羅盤組件
 struct Compass: View {
     var ringRadius: CGFloat
-    
+    var angle: Double
+
     var body: some View {
         ZStack {
             CompassRing(ringRadius: ringRadius)
+            // 此處 CompassArrow() 為外部引入的組件
             CompassArrow()
                 .fill(Color("color/brand/400"))
                 .frame(width: 32, height: 32)
                 .offset(y: -2)
+                .rotationEffect(.degrees(angle))
         }
     }
 }
 
-// 羅盤刻度
+// MARK: 羅盤刻度
 struct CompassRing: View {
     let totalTicks = 24
-    var ringRadius: CGFloat  // 外部傳入
+    var ringRadius: CGFloat
     let tickWidth: CGFloat = 2
     let tickHeight: CGFloat = 6
-    
+
     var body: some View {
         ZStack {
             ForEach(0..<totalTicks, id: \.self) { i in
