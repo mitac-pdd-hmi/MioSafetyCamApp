@@ -21,7 +21,7 @@ struct ClockWidgetView: View {
                             // 日期
                             Text(DateFormatterProvider.dateFormatter.string(from: currentDate))
                                 .foregroundColor(Color("color/gray/300"))
-                                .font(.system(size: 20))
+                                .font(.system(size: 16, weight: .regular))
                             
                             Spacer()
                             
@@ -38,7 +38,7 @@ struct ClockWidgetView: View {
                             // AM/PM
                             Text(DateFormatterProvider.ampmFormatter.string(from: currentDate))
                                 .foregroundColor(Color("color/gray/300"))
-                                .font(.system(size: 20))
+                                .font(.system(size: 16, weight: .regular))
                         }
                         .padding(16)
                         // 每秒更新 currentDate

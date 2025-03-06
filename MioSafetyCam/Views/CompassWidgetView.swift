@@ -78,24 +78,24 @@ struct CompassInfo: View {
                 // 海拔資訊
                 VStack(alignment: .leading, spacing: 4) {
                     Text("海拔高度")
-                        .font(.system(size: 16, weight: .regular, design: .default))
+                        .font(.system(size: 16, weight: .regular))
                         .foregroundColor(Color("color/gray/300"))
                     Text("240 公尺")
-                        .font(.system(size: 20, weight: .bold, design: .default))
+                        .font(.system(size: 20, weight: .bold))
                         .foregroundColor(.white)
                 }
                 Spacer()
                 // 指南資訊
                 VStack(alignment: .leading, spacing: 4) {
                     Text("指南")
-                        .font(.system(size: 16, weight: .regular, design: .default))
+                        .font(.system(size: 16, weight: .regular))
                         .foregroundColor(Color("color/gray/300"))
                     VStack(alignment: .leading) {
                         Text("SE")
-                            .font(.system(size: 20, weight: .bold, design: .default))
+                            .font(.system(size: 20, weight: .bold))
                             .foregroundColor(Color("color/brand/400"))
                         Text("125°")
-                            .font(.system(size: 20, weight: .bold, design: .default))
+                            .font(.system(size: 20, weight: .bold))
                             .foregroundColor(.white)
                     }
                 }
