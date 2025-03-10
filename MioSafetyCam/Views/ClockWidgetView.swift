@@ -90,8 +90,7 @@ struct DateFormatterProvider {
     static let timeFormatter: DateFormatter = {
         let formatter = DateFormatter()
         formatter.locale = Locale(identifier: "en_US_POSIX")
-        // 若想使用 12 小時制，請改成 "hh:mm"
-        formatter.dateFormat = "HH:mm"
+        formatter.dateFormat = "hh:mm"
         return formatter
     }()
     

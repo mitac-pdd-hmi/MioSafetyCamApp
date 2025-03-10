@@ -1,6 +1,6 @@
 import SwiftUI
 
-struct ContentView: View {
+struct VolumeWidgetView: View {
     @State private var volume: CGFloat = 0.5
     
     var body: some View {
@@ -14,7 +14,7 @@ struct ContentView: View {
                 
                 HStack {
                     Spacer()
-                    VolumeWidgetView(volume: $volume)
+                    VolumeView(volume: $volume)
                         .frame(width: 83, height: 300)
                     Spacer()
                 }
@@ -26,7 +26,7 @@ struct ContentView: View {
     }
 }
 
-struct VolumeWidgetView: View {
+struct VolumeView: View {
     @Binding var volume: CGFloat
     
     private var speakerIconName: String {
@@ -61,7 +61,7 @@ struct VolumeWidgetView: View {
                 .overlay(
                     Image(systemName: speakerIconName)
                         .font(.system(size: 30))
-                        .foregroundColor(isIconCovered ? Color("color/gray/700") : Color("color/gray/200"))
+                        .foregroundColor(isIconCovered ? Color("color/gray/800") : Color("color/gray/200"))
                         .padding(.bottom, 20)
                         .frame(maxHeight: .infinity, alignment: .bottom)
                 )
@@ -80,5 +80,5 @@ struct VolumeWidgetView: View {
 }
 
 #Preview {
-    ContentView()
+    VolumeWidgetView()
 }

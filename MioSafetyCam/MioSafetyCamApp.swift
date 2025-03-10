@@ -6,7 +6,6 @@ struct MioSafetyCamApp: App {
     
     var body: some Scene {
         WindowGroup {
-            VolumeWidgetView(volume: $volume)
         }
         
     }
